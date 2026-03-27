@@ -1,41 +1,41 @@
-@import "../components/_jumbotron.scss";
+@import '../components/_jumbotron.scss';
 
 #app-bar {
-    height: 68px;
-    position: fixed;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
-    left: 0;
-    right: 0;
-    z-index: 90;
-    border-top: 3px solid #000;
-    ul#left-region {
-        height: 100%;
-        padding-left: 40px;
-        background-color: #3a8a90;
-        color: #fff;
-        li {
-            display: inline-block;
-        }
-        li#sidebar-reveal {
-            position: absolute;
-        }
-        @media screen and (max-width: 360px) {
-            padding-left: 25px;
-        }
+  height: $appbar-height;
+  position: fixed;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  left: 0;
+  right: 0;
+  z-index: 90;
+  border-top: 3px solid #000;
+  ul#left-region {
+    height: 100%;
+    padding-left: 40px;
+    background-color: #3a8a90;
+    color: #fff;
+    li {
+      display: inline-block;
     }
+    li#sidebar-reveal {
+      position: absolute;
+    }
+    @media screen and (max-width: $sidebar-mobile-width) {
+      padding-left: 25px;
+    }
+  }
 }
 
 #app-bar__website-title {
-    position: absolute;
-    padding-left: 50px;
-    font-size: inherit;
-    margin-top: 3px;
-    @media screen and (max-width: 360px) {
-        padding-left: 40px;
-    }
+  position: absolute;
+  padding-left: 50px;
+  font-size: inherit;
+  margin-top: 3px;
+  @media screen and (max-width: $sidebar-mobile-width) {
+    padding-left: 40px;
+  }
 }
 
 #app-bar__lesson-title {
-    font-size: inherit;
+  font-size: inherit;
 }

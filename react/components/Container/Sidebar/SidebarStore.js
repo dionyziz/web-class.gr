@@ -3,7 +3,8 @@ import { EventEmitter } from 'events';
 class SidebarStore extends EventEmitter {
   constructor() {
     super();
-    let windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    let windowWidth =
+      window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
     if (windowWidth <= 768) {
       this.MenuIsCollapse = true;
@@ -17,11 +18,11 @@ class SidebarStore extends EventEmitter {
   }
 
   revertCurrentState() {
-    this.MenuIsCollapse = this.MenuIsCollapse != true;
+    this.MenuIsCollapse = !this.MenuIsCollapse;
     this.emit('change');
   }
 }
 
-const sidebarStore = new SidebarStore;
+const sidebarStore = new SidebarStore();
 
 export default sidebarStore;

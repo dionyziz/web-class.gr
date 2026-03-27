@@ -24,13 +24,13 @@
   #first-lesson-button {
     margin: 0 auto;
     border: none;
-    background: #2C955D;
+    background: #2c955d;
     padding: 25px 70px;
     color: #fff;
     font-size: 19px;
-    transition: .2s;
+    transition: 0.2s;
     &:hover {
-      background: #2C957B !important;
+      background: #2c957b !important;
     }
     @media screen and (max-width: 315px) {
       padding: 25px 20px;

@@ -6,29 +6,32 @@ export default class Header extends React.Component {
   constructor() {
     super();
     this.state = {
-      SidebarIsCollapse: sidebarStore.getCurrentState()
-    }
-    this.OverlayClass = 'hidden';
+      SidebarIsCollapse: sidebarStore.getCurrentState(),
+      OverlayClass: 'hidden',
+    };
   }
 
-  componentWillMount() {
-    sidebarStore.on('change', () => {
-      this.setState({ SidebarIsCollapse: sidebarStore.getCurrentState() });
-      this.SetOverlayState();
-    });
+  componentDidMount() {
+    this._onChange = () => {
+      this.setState({ SidebarIsCollapse: sidebarStore.getCurrentState() }, () => {
+        this.SetOverlayState();
+      });
+    };
+    sidebarStore.on('change', this._onChange);
+  }
+  componentWillUnmount() {
+    sidebarStore.removeListener('change', this._onChange);
   }
 
   SetOverlayState() {
     if (this.state.SidebarIsCollapse) {
-      this.OverlayClass = "hidden-sm hidden-md hidden-lg";
+      this.setState({ OverlayClass: 'hidden-sm hidden-md hidden-lg' });
     } else {
-      this.OverlayClass = "hidden";
+      this.setState({ OverlayClass: 'hidden' });
     }
   }
 
   render() {
-    return (
-      <div class={this.OverlayClass} id="overlay"></div>
-    );
+    return <div className={this.state.OverlayClass} id="overlay"></div>;
   }
 }

@@ -3,25 +3,27 @@
  */
 
 #jumbotron {
-    position: absolute;
-    padding-left: 1.25em;
-    font-size: 29px;
-    margin-top: 15px;
-    z-index: 91;
-    height: 30px;
-    cursor: pointer;
-    @media screen and (max-width: 767px) {
-        display: block;
-    }
+  position: absolute;
+  padding-left: 1.25em;
+  font-size: 29px;
+  margin-top: 15px;
+  z-index: 91;
+  height: 30px;
+  cursor: pointer;
+  @media screen and (max-width: 767px) {
+    display: block;
+  }
 }
 
 #jumbotron::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.25em;
-    width: 20px;
-    height: 0.1em;
-    background: #fff;
-    box-shadow: 0 0.2em 0 0 #fff, 0 0.41em 0 0 #fff;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+  width: 20px;
+  height: 0.1em;
+  background: #fff;
+  box-shadow:
+    0 0.2em 0 0 #fff,
+    0 0.41em 0 0 #fff;
 }

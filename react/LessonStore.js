@@ -14,19 +14,18 @@ class LessonStore extends EventEmitter {
   setLesson(url) {
     this.LessonDetails = false;
     for (const lesson of lessonValues) {
-      if (lesson.url == url) {
+      if (lesson.url === url) {
         this.LessonDetails = lesson;
       }
-    } 
+    }
     this.emit('change');
   }
 
   getLesson() {
     return this.LessonDetails;
   }
-
 }
 
-const lessonStore = new LessonStore;
+const lessonStore = new LessonStore();
 
 export default lessonStore;

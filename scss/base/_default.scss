@@ -4,10 +4,13 @@
 
 a,
 button {
-    &:hover,
-    &:active,
-    &:focus {
-        outline: none !important;
-        box-shadow: none !important;
-    }
+  &:hover,
+  &:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  &:focus:not(:focus-visible) {
+    outline: none !important;
+    box-shadow: none !important;
+  }
 }

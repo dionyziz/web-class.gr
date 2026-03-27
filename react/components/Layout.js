@@ -8,17 +8,14 @@ export default class Layout extends React.Component {
   constructor() {
     super();
     this.state = {
-      PageTitle: LessonStore.getLesson()
-    }
+      PageTitle: LessonStore.getLesson(),
+    };
   }
   render() {
-    
     return (
       <div>
         <Header title={this.state.PageTitle} />
-        <Container>
-          {this.props.children}
-        </Container>
+        <Container>{this.props.children}</Container>
       </div>
     );
   }

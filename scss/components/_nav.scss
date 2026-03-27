@@ -2,64 +2,64 @@
 
 @import '_ripple.scss';
 #sidebar {
-    overflow-y: scroll;
-    overflow-x: hidden;
-    height: calc(100% - 68px); // take care of header height
-    width: calc(100% + 19px); // hide scroll bar
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100%;
+  width: calc(100% + 19px); // hide scroll bar
 }
 
 nav,
 nav ul,
 nav li,
 nav a {
-    margin: 0 auto;
-    padding: 0;
-    font-family: 'Roboto', 'Open Sans', sans-serif;
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Roboto', 'Open Sans', sans-serif;
 }
 
 nav > ul > li {
-    transition: .2s;
-    &:hover {
-        background-color: #e3e3e3;
-        color: #333;
-    }
+  transition: 0.2s;
+  &:hover {
+    background-color: #e3e3e3;
+    color: #333;
+  }
 }
 
 nav > ul > li > a {
-    display: block;
-    text-transform: uppercase;
-    padding: 5px 0 5px 10px;
+  display: block;
+  text-transform: uppercase;
+  padding: 5px 0 5px 10px;
 }
 
 nav > ul > li > a > span {
-    padding: 10px 10px 10px 30px;
-    display: block;
-    font-size: 13px;
-    @media screen and (max-width: 767px) {
-        padding-right: 0;
-    }
+  padding: 10px 10px 10px 30px;
+  display: block;
+  font-size: 13px;
+  @media screen and (max-width: $screen-md) {
+    padding-right: 0;
+  }
 }
 
 .nav-ico {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .lesson-title-holder {
-    @media screen and (max-width: 767px) {
-        margin-left: -25px;
-    }
+  @media screen and (max-width: $screen-md) {
+    margin-left: -25px;
+  }
 }
 
 .item-align-fix {
-    @media screen and (max-width: 767px) {
-        width: 245px;
-        margin: 0 auto;
-    }
+  @media screen and (max-width: $screen-md) {
+    width: 245px;
+    margin: 0 auto;
+  }
 }
 
 .nav-active {
-    color: #fff !important;
-    background-color: #717171 !important;
+  color: #fff !important;
+  background-color: #717171 !important;
 }
 
 /* 
@@ -68,9 +68,9 @@ nav > ul > li > a > span {
  */
 
 .untaken-lesson {
-    opacity: 0;
+  opacity: 0;
 }
 
 .glyphicon-pencil.untaken-lesson {
-    opacity: 1;
+  opacity: 1;
 }

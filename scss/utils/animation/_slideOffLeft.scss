@@ -1,13 +1,13 @@
 @keyframes slideOffLeft {
-    from {
-        transform: translate(0, 0);
-    }
-    to {
-        visibility: hidden;
-        transform: translate(-110%, 0);
-    }
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    visibility: hidden;
+    transform: translate(-110%, 0);
+  }
 }
 
 .slideOffLeft {
-    animation: slideOffLeft 1s forwards;
+  animation: slideOffLeft 1s forwards;
 }

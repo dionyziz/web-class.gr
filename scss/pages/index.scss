@@ -1,132 +1,129 @@
-@import "../base/_variables.scss";
-@import "../layout/_app-bar.scss";
-@import "../components/_nav.scss";
-@import "../components/_overlay.scss";
-@import "../components/_scroll-to-reveal.scss";
-@import "../screens/_index.scss";
-@import "../screens/_404.scss";
+@import '../base/_variables.scss';
+@import '../layout/_app-bar.scss';
+@import '../components/_nav.scss';
+@import '../components/_overlay.scss';
+@import '../screens/_index.scss';
+@import '../screens/_404.scss';
 
 #container {
-    padding-top: 68px;
-    padding-bottom: 10px;
+  padding-top: $appbar-height;
+  padding-bottom: 10px;
 }
 
 #nav-md-placeholder {
-    position: fixed;
-    height: 100%;
-    background-color: #fff;
-    padding: 0;
-    position: fixed;
-    z-index: 1000;
-    height: 100%;
-    background-color: #fff;
-    overflow: hidden;
-    box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.35);
+  position: fixed;
+  top: $appbar-height;
+  z-index: 1000;
+  height: calc(100% - $appbar-height);
+  background-color: #fff;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.35);
 
-     @media screen and (max-width: 767px) {
-        border: 0;
-        width: 360px;
-        box-shadow: none;
-    }
-    @media screen and (max-width: 360px) {
-        width: 100%;
-    }
+  @media screen and (max-width: $screen-md) {
+    border: 0;
+    width: $sidebar-mobile-width;
+    box-shadow: none;
+  }
+  @media screen and (max-width: $sidebar-mobile-width) {
+    width: 100%;
+  }
 }
 
 #main-content-placeholder {
-    position: absolute;
-    right: 0;
-    padding-top: 30px;
-    padding-bottom: 15px;
-    letter-spacing: 0;
-    a {
-        border-bottom: 1px dashed black;
-    }
+  position: absolute;
+  right: 0;
+  padding-top: 30px;
+  padding-bottom: 15px;
+  letter-spacing: 0;
+  a {
+    border-bottom: 1px dashed black;
+  }
 }
 
 section#lesson-details {
-    padding-top: 40px;
-    border-top: 1px solid rgba(0, 0, 0, 0.21);
-    margin-top: 20px;
-    header h1#lesson-title {
-        font-weight: 700;
-        font-size: inherit;
-    }
+  padding-top: 40px;
+  border-top: 1px solid rgba(0, 0, 0, 0.21);
+  margin-top: 20px;
+  header h1#lesson-title {
+    font-weight: 700;
+    font-size: inherit;
+  }
 }
 
 #previous-lesson {
-    padding: 0;
+  padding: 0;
 }
 
 #previous-lesson,
 #next-lesson {
-    @media screen and (max-width: 460px) {
-        width: 50%;
-        display: inline-block;
-    }
+  @media screen and (max-width: $screen-sm) {
+    width: 50%;
+    display: inline-block;
+  }
 }
 
 #lesson-counter {
-    color: rgb(96, 96, 96);
-    padding-top: 10px;
-    font-size: 12px;
-    @media screen and (max-width: 460px) {
-        display: none;
-    }
+  color: rgb(96, 96, 96);
+  padding-top: 10px;
+  font-size: 12px;
+  @media screen and (max-width: $screen-sm) {
+    display: none;
+  }
 }
 
 #lesson-description {
-    word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 #navigation-buttons {
-    text-decoration: none;
-    padding-top: 60px;
-    a {
-        border: 2px solid rgb(58, 138, 144);
-        padding: 10px 15px;
-        width: 140px;
-        text-transform: uppercase;
-        font-size: 12px;
-        font-family: 'Roboto', sans-serif;
-        &:hover,
-        &:active,
-        &:focus {
-            color: #000;
-        }
-        @media screen and (max-width: 360px) {
-            width: 120px;
-        }
-        @media screen and (max-width: 320px) {
-            margin-left: -10px;
-        }
+  text-decoration: none;
+  padding-top: 60px;
+  a {
+    border: 2px solid rgb(58, 138, 144);
+    padding: 10px 15px;
+    width: 140px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    &:hover,
+    &:active,
+    &:focus {
+      color: #000;
     }
+    @media screen and (max-width: $sidebar-mobile-width) {
+      width: 120px;
+    }
+    @media screen and (max-width: $screen-xs) {
+      margin-left: -10px;
+    }
+  }
 }
 
 #other-informations {
-    font-size: 12px;
-    color: #000;
-    font-weight: 700;
-    padding-top: 20px;
-    border-top: 1px solid black;
-    margin-top: 30px;
-    .glyphicon::before {
-        padding-right: 10px;
-    }
-    a {
-        margin-right: 15px;
-    }
+  font-size: 12px;
+  color: #000;
+  font-weight: 700;
+  padding-top: 20px;
+  border-top: 1px solid black;
+  margin-top: 30px;
+  .glyphicon::before {
+    padding-right: 10px;
+  }
+  a {
+    margin-right: 15px;
+  }
 }
 
 #exercise-description {
-    #problem {
-        h3 {
-            border-bottom: 1px solid black;
-            padding-bottom: 5px;
-        }
+  #problem {
+    h3 {
+      border-bottom: 1px solid black;
+      padding-bottom: 5px;
     }
-    #solution {
-        border-top: 1px solid black;
-        padding-top: 20px;
-    }
+  }
+  #solution {
+    border-top: 1px solid black;
+    padding-top: 20px;
+  }
 }

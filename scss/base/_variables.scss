@@ -6,8 +6,17 @@
 $milk-white: #fbfbfb;
 $pink: #e91e63;
 
-
 // Typography
 $fonts: 'Open Sans';
 $letter-spacing: 2px;
 $font-size-base: 16px;
+
+// Layout
+$sidebar-width: 68px;
+$appbar-height: 68px;
+$sidebar-mobile-width: 360px;
+
+// Breakpoints
+$screen-xs: 320px;
+$screen-sm: 460px;
+$screen-md: 767px;

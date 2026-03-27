@@ -15,22 +15,18 @@ concurrency:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '8'
-
-      - name: Install Python 2 for node-gyp
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y python2
-          sudo ln -sf /usr/bin/python2 /usr/bin/python
-          npm config set python /usr/bin/python2
+          node-version: '20'
 
       - run: npm install
+
+      - name: Lint
+        run: npx eslint react/ gulpfile.js
 
       - run: npx gulp scss
       - run: npx gulp react
