@@ -1,0 +1,51 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '8'
+
+      - run: npm install
+
+      - run: npx gulp scss
+      - run: npx gulp react
+
+      - name: Prepare site
+        run: |
+          mkdir _site
+          cp -r public _site/public
+          cp -r resources _site/resources
+          cp -r slides _site/slides 2>/dev/null || true
+          cp index.html _site/
+          cp favicon.png _site/
+          cp CNAME _site/
+
+      - uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
